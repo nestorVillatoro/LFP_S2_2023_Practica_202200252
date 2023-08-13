@@ -1,16 +1,22 @@
 print("----------------------------------------------------------------")
 print("| practica 1 - Lenguajes formales y de programación seccion B+ |")
 print("----------------------------------------------------------------")
-
+nombres = []
+cantidades =[]
+precios = []
+ubicaciones = []
 def cargarInvIn():
     print("-----------Cargar Inventario Inicial-----------")
     nombre = input("Ingrese el nombre del producto: ")
+    nombres.append(nombre)
     cantidad = int(input("ingrese la cantidad: "))
+    cantidades.append(cantidad)
     precio = float(input("ingrese el precio: "))
+    precios.append(precio)
     ubicacion = input("ingrese la ubicacion: ")
-    crear_producto = [nombre, cantidad, precio, ubicacion]
+    ubicaciones.append(ubicacion)
     archivo = open('inventario.inv', 'a+')
-    archivo.write("\n crear_producto " + crear_producto[0] + "; " + str(crear_producto[1]) + "; " + str(crear_producto[2]) + "; " + crear_producto[3] + " ")
+    archivo.write("\ncrear_producto " + nombre + "; " + str(cantidad) + "; " + str(precio) + "; " + ubicacion + " ")
     archivo.seek(0)
     var_inv = archivo.read()
     print("")
@@ -28,23 +34,31 @@ def cargarInsMov():
     match op:
         case 1:
             nombre = input("Ingrese el nombre del producto que desea agregar: ")
-            cantidad = input("Ingrese la cantidad que desea agregar: ")
+            cantidad = int(input("Ingrese la cantidad que desea agregar: "))
             ubicacion = input("Ingrese la ubicacion donde desea agregar: ")
-            archivo = open("inventario.inv", "a+")
-            archivo.seek(1)
-            lineas = archivo.readlines()
-            archivo.close
+            for i in range(len(nombres)):
+                if nombre == nombres[i]:
+                    if ubicacion == ubicaciones[i]:
+
+                        archivo = open('movimientos.mov', 'a+')
+                        archivo.write("\nagregar_stock " + nombre + "; " + str(cantidad) + "; " + ubicacion + " ")
+                        archivo.seek(0)
+                        var_inv = archivo.read()
+                        print("")
+                        print(var_inv)
+                        print("")
+                        archivo.close()
+                        input("Presione una tecla para continuar...")
+                    else:
+                        print("El producto no existe en esa ubicacion!")
+                else:
+                    print("El producto no existe!")
             
         case 2:
             cargarInsMov()
         case _:
             print("Opción no válida")
             cargarInsMov()
-
-    archivo = open('movimientos.mov', 'r+')
-    var_informe = archivo.read()
-    print(var_informe)
-    archivo.close()
     input("Presione una tecla para continuar...")
 
 def crearInfoInv():
