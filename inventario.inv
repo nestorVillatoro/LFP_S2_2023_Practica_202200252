@@ -1,0 +1,5 @@
+------------ INVENTARIO INICIAL ------------
+crear_producto prod1; 100; 2.5; A 
+crear_producto prod2; 200; 3.5; B 
+crear_producto prod3; 250; 4.6; C 
+crear_producto prod1; 200; 2.5; B 

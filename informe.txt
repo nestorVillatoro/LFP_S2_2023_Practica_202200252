@@ -1,0 +1,8 @@
+
+---------------------- INFORME DE INVENTARIO -----------------------
+Producto   Cantidad    Precio Unitario     Valor Total     Ubicacion
+--------------------------------------------------------------------
+prod1 200   2.5  500.0  A
+prod2 200   3.5  700.0  B
+prod3 200   4.6  919.9999999999999  C
+prod1 200   2.5  500.0  B

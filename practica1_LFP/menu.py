@@ -39,23 +39,39 @@ def cargarInsMov():
             for i in range(len(nombres)):
                 if nombre == nombres[i]:
                     if ubicacion == ubicaciones[i]:
-
+                        cantidades[i] = cantidades[i] + cantidad
                         archivo = open('movimientos.mov', 'a+')
                         archivo.write("\nagregar_stock " + nombre + "; " + str(cantidad) + "; " + ubicacion + " ")
                         archivo.seek(0)
-                        var_inv = archivo.read()
+                        var_mov = archivo.read()
                         print("")
-                        print(var_inv)
+                        print(var_mov)
                         print("")
                         archivo.close()
-                        input("Presione una tecla para continuar...")
                     else:
                         print("El producto no existe en esa ubicacion!")
-                else:
-                    print("El producto no existe!")
             
         case 2:
-            cargarInsMov()
+            nombre = input("Ingrese el nombre del producto que desea vender: ")
+            cantidad = int(input("Ingrese la cantidad que desea vender: "))
+            ubicacion = input("Ingrese la ubicacion donde desea vender: ")
+            for i in range(len(nombres)):
+                if nombre == nombres[i]:
+                    if ubicacion == ubicaciones[i]:
+                        if cantidad<cantidades[i]:
+                            cantidades[i] = cantidades[i] - cantidad
+                            archivo = open('movimientos.mov', 'a+')
+                            archivo.write("\nvender_producto " + nombre + "; " + str(cantidad) + "; " + ubicacion + " ")
+                            archivo.seek(0)
+                            var_mov = archivo.read()
+                            print("")
+                            print(var_mov)
+                            print("")
+                            archivo.close()
+                        else:
+                            print("No hay suficientes existencias!")
+                    else:
+                        print("El producto no existe en esa ubicacion!")
         case _:
             print("Opción no válida")
             cargarInsMov()
@@ -64,9 +80,17 @@ def cargarInsMov():
 def crearInfoInv():
     print("-----------Crear Informe de inventario-----------")
     archivo = open('informe.txt', 'w+')
-    archivo.write("\n------------ INFORME DE INVENTARIO ------------\n")
+    archivo.write("--------------------- INFORME DE INVENTARIO ---------------------")
+    archivo.write("\nProducto | Cantidad | Precio Unitario | Valor Total | Ubicacion")
+    archivo.write("\n----------------------------------------------------------------")
+    for i in range(len(nombres)):
+        valorTotal = cantidades[i]*precios[i]
+        archivo.write("\n" + nombres[i] + "    " + str(cantidades[i]) + "    " + str(precios[i]) + "    " + str(valorTotal) + "    " + ubicaciones[i])
+    archivo.seek(0)
     var_informe = archivo.read()
+    print("")
     print(var_informe)
+    print("")
     archivo.close()
     input("Presione una tecla para continuar...")
 
