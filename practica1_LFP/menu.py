@@ -47,7 +47,7 @@ def cargarInvIn():
             precios.append(precio)
             ubicaciones.append(ubicacion)
             archivo = open('inventario.inv', 'a+')
-            archivo.write("\ncrear_producto " + nombre + "; " + str(cantidad) + "; " + str(precio) + "; " + ubicacion + " ")
+            archivo.write("\ncrear_producto " + nombre + ";" + str(cantidad) + ";" + str(precio) + ";" + ubicacion + " ")
             archivo.seek(0)
             var_inv = archivo.read()
             print("")
@@ -133,7 +133,7 @@ def cargarInsMov():
                         cargarInsMov()
 
                     archivo = open('movimientos.mov', 'a+')
-                    archivo.write("\nagregar_stock " + nombre + "; " + str(cantidad) + "; " + ubicacion + " ")
+                    archivo.write("\nagregar_stock " + nombre + ";" + str(cantidad) + ";" + ubicacion + " ")
                     archivo.seek(0)
                     var_mov = archivo.read()
                     print("")
@@ -161,7 +161,7 @@ def cargarInsMov():
                         cargarInsMov()
 
                     archivo = open('movimientos.mov', 'a+')
-                    archivo.write("\nagregar_stock " + nombre + "; " + str(cantidad) + "; " + ubicacion + " ")
+                    archivo.write("\nagregar_stock " + nombre + ";" + str(cantidad) + ";" + ubicacion + " ")
                     archivo.seek(0)
                     var_mov = archivo.read()
                     print("")
