@@ -183,7 +183,7 @@ def crearInfoInv():
     archivo.write("\n----------------------------------------------------------------")
     for i in range(len(nombres)):
         valorTotal = cantidades[i]*precios[i]
-        archivo.write("\n" + nombres[i] + "    " + str(cantidades[i]) + "    " + str(precios[i]) + "    " + str(valorTotal) + "    " + ubicaciones[i])
+        archivo.write("\n" + nombres[i] + "    " + str(cantidades[i]) + "    $" + str(precios[i]) + "    $" + str(valorTotal) + "    " + ubicaciones[i])
     archivo.seek(0)
     var_informe = archivo.read()
     print("")

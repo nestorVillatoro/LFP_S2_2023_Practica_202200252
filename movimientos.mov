@@ -5,3 +5,5 @@ vender_producto Bananos;25;BodegaD
 vender_producto Manazanas;150;BodegaB
 agregar_stock Helado;150;BodegaF
 agregar_stock Queso;350;BodegaD
+vender_producto Manazanas;150;BodegaB
+vender_producto Bananos;50;BodegaC
