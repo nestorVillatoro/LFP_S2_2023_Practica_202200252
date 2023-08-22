@@ -1,8 +1,17 @@
-
----------------------- INFORME DE INVENTARIO -----------------------
-Producto   Cantidad    Precio Unitario     Valor Total     Ubicacion
---------------------------------------------------------------------
-prod1 200   2.5  500.0  A
-prod2 200   3.5  700.0  B
-prod3 200   4.6  919.9999999999999  C
-prod1 200   2.5  500.0  B
+--------------------- INFORME DE INVENTARIO ---------------------
+Producto | Cantidad | Precio Unitario | Valor Total | Ubicacion
+----------------------------------------------------------------
+Tomates    100    1.0    100.0    BodegaA
+Manzanas    150    3.0    450.0    BodegaB
+Peras    175    3.25    568.75    BodegaC
+Bananos    50    1.75    87.5    BodegaD
+Queso    50    20.5    1025.0    BodegaE
+Helado    510    6.5    3315.0    BodegaF
+Uvas    1000    0.5    500.0    BodegaG
+Tomates    200    1.0    200.0    BodegaG
+Manzanas    300    3.0    900.0    BodegaF
+Peras    100    3.25    325.0    BodegaE
+Bananos    50    1.75    87.5    BodegaC
+Queso    360    20.5    7380.0    BodegaD
+Helado    80    6.5    520.0    BodegaB
+Uvas    5    0.5    2.5    BodegaA

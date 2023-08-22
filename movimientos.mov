@@ -1,3 +1,7 @@
------------- INSTRUCCIONES DE MOVIMIENTO ------------
-agregar_stock prod1; 100; A 
-vender_producto prod3; 50; C 
+vender_producto Tomates;250;BodegaB
+vender_producto Manzanas;100;BodegaB
+vender_producto Peras;200;BodegaC
+vender_producto Bananos;25;BodegaD
+vender_producto Manazanas;150;BodegaB
+agregar_stock Helado;150;BodegaF
+agregar_stock Queso;350;BodegaD
